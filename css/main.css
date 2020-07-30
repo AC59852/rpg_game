@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.shopBox {
+    width: 50%;
+    margin: 0 auto;
+    background-color: rgba(56, 114, 223, 0.349);
+    border: solid 2px black;
+    height: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shopText {
+    cursor: pointer;
+}
+
+.shopText p {
+    font-size: 3vw;
+    color: white;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+
+.item {
+    position: relative;
+    width: 6%;
+    cursor: pointer;
+}
+
+.item:hover p{
+    display: block !important;
+    position: fixed;
+    overflow: hidden;
+}
+
+.item p {
+    display: none;
+}
+
+#shopItems {
+    display: flex;
+    justify-content: space-evenly;
+}

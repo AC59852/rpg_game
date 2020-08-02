@@ -1,3 +1,4 @@
+import ShopComponent from "./modules/ShopComponent.js";
 import HomeComponent from "./modules/HomeComponent.js";
 
 // TODO Add a page that tells user that their email was sent
@@ -12,6 +13,7 @@ import HomeComponent from "./modules/HomeComponent.js";
     let router = new VueRouter({
         routes: [
             { path: '/', name: "home", component: HomeComponent},
+            { path: '/shop', name: "shop", component: ShopComponent},
         ]
     });
 
@@ -25,7 +27,7 @@ import HomeComponent from "./modules/HomeComponent.js";
         // Might not be needed, this is for defining functions inside Vue
         methods: {
             // Most JS functions are ran independently of the main VM
-            // and therefore are ran inside of components
+            // and therefore are ran inside of component
         },
         
         // Router definition

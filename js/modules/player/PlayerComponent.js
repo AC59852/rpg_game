@@ -3,15 +3,15 @@
   // Component Code
   export default {
 
-    props: ['item'],
+    props: ['player'],
 
 
       // Component HTML using child components
       template: `
       <div>
-        <h2>{{ item.name }}</h2>
-        <h3 id="realItemPrice">{{ item.price }}</h3>
-        <p>{{ item.desc }}</p>
+        <h2>{{ player.name }}</h2>
+        <h3>{{ player.ability }}</h3>
+        <h3>{{ player.dmg }}</h3>
       </div>
       `
   }

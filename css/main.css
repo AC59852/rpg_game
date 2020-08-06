@@ -49,3 +49,38 @@ body {
     display: flex;
     justify-content: space-evenly;
 }
+
+#players {
+    display: flex;
+}
+
+#players div {
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+#currentDmg {
+    display: none;
+}
+
+.invenItem {
+    position: relative;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 1% 0;
+}
+
+.invenItem p {
+    display: none;
+}
+
+.invenItem:hover p{
+    display: block !important;
+    margin: -0.4% 0 -1%;
+}
+
+#itemPrice {
+    display: none;
+}

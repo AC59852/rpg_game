@@ -8,15 +8,10 @@ export default {
     <div class="container">
         <div class="shopText shopBox"><p class="textCon"></p></div>
 
-        <div class="shopBox shopBuy"><p>So you're looking to buy {{ currentItem.name }}? That'll be <span id="itemPrice">{{ currentItem.price }}</span></p></div>
-
-        <div class="shopBox shopBought"><p id="shopBoughtText"></p></div>
-
-        <div class="shopBtn shopBuyBtn" v-on:click="attemptPurchase()">Yes</div>
-        <div class="shopBtn shopNoBuyBtn"><span>No</span></div>
+        <span id="itemPrice">{{ currentItem.price }}</span>
 
         <div id="shopItems">
-          <item v-for="item in items" v-on:click.native="newInfo(item)" :item="item" :key="item.ID" class="item" :class="item.ID"></item>
+          <item v-for="item in items" v-on:click.native="attemptPurchase(item)" :item="item" :key="item.ID" class="item" :class="item.ID"></item>
         </div>
 
         <router-link to="/">home</router-link>
@@ -91,35 +86,35 @@ export default {
         };
         },
 
-        newInfo(info) {
+        attemptPurchase(info) {
           this.currentItem = info;
 
-          $("div.shopText").hide();
-          $("div.shopBuy").show();
-          $("div.shopBought").hide();
-        },
+          setTimeout(function() {
+            var price = $("span#itemPrice").text().replace("$", "");
+            var money = $("div#wallet").text().replace("$", "");
+            if (+money < +price) {
+              $("p.textCon").text("Sorry, you don't have enough for that!");
+              console.log(price);
+              console.log(money);
+  
+            } else {
+              var walletNew = money -= price;
+              $("p.textCon").text("Thanks for the purchase! Your new balance is $" + walletNew);
+              $("div#wallet").text("$" + walletNew);
+              // localStorage.setItem('wallet', walletNew);
+  
+              var inventory = [];
+  
+              inventory.push(info);
+  
+              var r = JSON.stringify(inventory);
+              
+              var p = JSON.parse(r);
+  
+              $("span#inventory").append(`<span class="invenItem ${p[0].name}"><li>` + p[0].name + `</li><p>${p[0].desc}</p></span>`);
+            }
+          }.bind(this),0);
 
-        attemptPurchase() {
-          var price = $("span#itemPrice").text().replace("$", "");
-          var money = $("div#wallet").text().replace("$", "");
-
-          if (+money < +price) {
-            $("p#shopBoughtText").text("Sorry, you don't have enough for that!");
-            console.log(price);
-            console.log(money);
-
-            $("div.shopBought").show();
-            $("div.shopBuy").hide();
-
-          } else {
-            var walletNew = money -= price;
-            $("p#shopBoughtText").text("Thanks for the purchase! Your new balance is $" + walletNew);
-            $("div#wallet").text("$" + walletNew);
-            // localStorage.setItem('wallet', walletNew);
-
-            $("div.shopBought").show();
-            $("div.shopBuy").hide();
-          }
         }
           
     },

@@ -11,6 +11,7 @@
 
       mounted: function() {
           // this.getWallet();
+          console.log(inventory)
       },
 
       methods: {

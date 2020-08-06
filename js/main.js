@@ -1,30 +1,13 @@
 import ShopComponent from "./modules/ShopComponent.js";
 import HomeComponent from "./modules/HomeComponent.js";
 import EnemyComponent from "./modules/EnemyComponent.js";
-
-
-Vue.component('player', {
-    props: {
-        name: String,
-        ability: String,
-        dmg: String
-    },
-
-    template: `
-    <div>
-        <h2 class="playerName">{{ name }}</h2>
-        <h3>{{ ability }}</h3>
-        <h3>{{ dmg }}</h3>
-    </div>
-    `
-}),
+//import PlayerComponent from "./modules/player/PlayerComponent.js";
+import playertest from "./modules/player/playertest.js";
 
 // TODO Add a page that tells user that their email was sent
 // TODO Allow redirect page to have button that sends back to home or redirect after done reading
-
 // SOLUTION change header in PHP to a route and path it
-
-(() => {
+window.bus = new Vue({});
     // Routing is very basic since this is a one page app,
     // just define default route as home and load component
 
@@ -38,22 +21,15 @@ Vue.component('player', {
 
     // Bind a Vue Model to the #app id
     const vm = new Vue({
-
-        data: {
-            players: [
-                {name: "player1", ability: "pistol shot", dmg: "15"},
-                {name: "player2", ability: "punch", dmg: "25"},
-                {name: "player3", ability: "knife lunge", dmg: "35"},
-            ],
-            currentPlayer: {},
-
-            inventory: []
-        },
         
         created: function() {
             console.log("Vue Application Created");
 
             this.inventoryHover();
+            
+        },
+
+        mounted: function() {
         },
 
         // Might not be needed, this is for defining functions inside Vue
@@ -75,10 +51,13 @@ Vue.component('player', {
               }
             }
         },
+
+        components: {
+            //player: PlayerComponent
+            playertest: playertest
+        },
         
         // Router definition
         router: router
 
     }).$mount("#app");
-
-})();

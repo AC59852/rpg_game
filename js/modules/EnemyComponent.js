@@ -1,5 +1,4 @@
 import EnemyTestComponent from "./EnemyTestComponent.js";
-import PlayerComponent from "./player/PlayerComponent.js";
 
   // Component Code
   export default {
@@ -16,13 +15,9 @@ import PlayerComponent from "./player/PlayerComponent.js";
     },
 
     methods: {
-      newAbil(info) {
-        this.currentPlayer = info;
-      }
     },
 
     components: {
         enemy: EnemyTestComponent,
-        player: PlayerComponent
     }
 }

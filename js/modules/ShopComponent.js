@@ -22,7 +22,8 @@ export default {
       return {
         items: [
           {name: "testItem 1", price: "$5", desc: "This is a test description for test item 1", ID: "1", itemID: "item1"},
-          {name: "testItem 2", price: "$6.99", desc: "This is a test description for test item 2", ID: "2", itemID: "item2"}
+          {name: "testItem 2", price: "$6.99", desc: "This is a test description for test item 2", ID: "2", itemID: "item2"},
+          {name: "testItem 3", price: "$1", desc: "This is a test description for test item 3", ID: "3", itemID: "item3"}
         ],
 
         currentItem: {}

@@ -24,7 +24,6 @@ window.bus = new Vue({});
         
         created: function() {
             console.log("Vue Application Created");
-
             this.inventoryHover();
             
         },

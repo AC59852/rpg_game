@@ -31,7 +31,8 @@ export default {
          bus.$on('healing',() => {
              console.log(this.players[0].hp);
          })
-
+        
+        // enemy damage event, can be reused easily for basic damage
         bus.$on('myEvent',() => {
             let currentHp = this.currentPlayer.hp,
                  enemyDmg = $("h3#enemyDmg").text();
@@ -39,33 +40,34 @@ export default {
                  var currentDmgTaken = currentHp -= enemyDmg;
                  console.log(currentDmgTaken)
 
-                  if (this.currentPlayer.name == this.players[0].name) {
-                      this.players[0].hp = currentDmgTaken
-                      if (this.players[0].hp <= 0) {
-                          this.players[0].hp = "0";
-
-                          this.players[0].dmg = "0";
+                if (this.currentPlayer.name == this.players[0].name) {
+                    this.players[0].hp = currentDmgTaken
+                }
+                    
+                    if (this.players[0].hp <= 0) {
+                        this.players[0].hp = "0";
+                        this.players[0].dmg = "0";
                       };
-                  } else if (this.currentPlayer.name == this.players[1].name) {
-                     this.players[1].hp = currentDmgTaken 
-                    }
+                  
+                if (this.currentPlayer.name == this.players[1].name) {
+                    this.players[1].hp = currentDmgTaken
+                }
+                    
+                    if (this.players[1].hp <= 0) {
+                        this.players[1].hp = "0";
+                        this.players[1].dmg = "0";
+                      };
 
-                      if (this.players[1].hp <= 0) {
-                          this.players[1].hp = "0";
-
-                          this.players[1].dmg = "0";
-                        } else if (this.currentPlayer.name == this.players[2].name) {
-                            this.players[2].hp = currentDmgTaken
-                        }
-
-                        if (this.players[2].hp <= 0) {
-                          this.players[2].hp = "0";
-
-                          this.players[2].dmg = "0";
-                        } else if (this.currentPlayer.name == this.players[2].name) {
-                            this.players[2].hp = currentDmgTaken
-                        }
-                    if (this.players[0].hp == 0 && this.players[1].hp == 0 && this.players[2].hp == 0) {
+                if (this.currentPlayer.name == this.players[2].name) {
+                    this.players[2].hp = currentDmgTaken
+                }
+                    
+                    if (this.players[2].hp <= 0) {
+                        this.players[2].hp = "0";
+                        this.players[2].dmg = "0";
+                      };
+                
+                if (this.players[0].hp == 0 && this.players[1].hp == 0 && this.players[2].hp == 0) {
                         alert("all of your characters are dead")
                     }
         })
@@ -82,22 +84,26 @@ export default {
 
         test() {
             if (!$("span#inventory".length)) {
-            return
-        } else if ($("span.item1").length){
-            this.players[0].dmg = "5";
-        }
+                return
+            } else if ($("span.item1").length){
+                this.players[0].dmg = "5";
+            }
         
-        if (!$("span#inventory".length)) {
-            return
-        } else if ($("span.item2").length){
-            let result = $("span.item2");
+            if (!$("span#inventory".length)) {
+                return
+            } else if ($("span.item2").length){
+                let result = $("span.item2");
 
-            for (let i = 0; i < n; i++) {
-                result *= x;
-              }
-        }
+                for (let i = 0; i < n; i++) {
+                    result *= x;
+                    }
+                }
+            },
+        
+        item3() {
+            console.log("test");
+        },
 
-    }
         
         },
 

@@ -11,12 +11,9 @@
 <body>
     <main id="app">
         <div id="wallet">$55</div>
-        <span id="inventory"></span>
-        <div id="players">
             <playertest :key="$route.fullPath"></playertest>
 
             <!-- <span id="currentDmg">{{currentPlayer.dmg}}</span> -->
-        </div>
         <router-view></router-view>
     </main>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -4,8 +4,8 @@
       template: `
       <div class="container">
          <h1>test</h1>
-         <router-link to="/shop">shop</router-link>
-         <router-link to="/enemy">monster</router-link>
+         <router-link to="/bundle1">Bundle 1</router-link>
+         <router-link to="/bundle2">Bundle 2</router-link>
       </div>
       `,
 
@@ -15,9 +15,5 @@
       },
 
       methods: {
-        //getWallet() {
-            //alert(localStorage.getItem('wallet'));
-            //$("div#wallet").html("$" + localStorage.getItem('wallet'));
-        //}
       }
   }

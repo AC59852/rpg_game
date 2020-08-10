@@ -29,7 +29,7 @@
     },
 
     created: function() {
-
+        
     },
 
     mounted: function() {
@@ -62,7 +62,6 @@
                 $("h2#enemyHP").text("HP: " + newHP);
             }
             bus.$emit('myEvent',true);
-
         }
     }
 }

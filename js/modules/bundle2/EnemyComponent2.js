@@ -1,4 +1,4 @@
-import EnemyTestComponent from "./EnemyTestComponent.js";
+import EnemyTestComponent from "./EnemyTestComponent2.js";
 
   // Component Code
   export default {
@@ -6,12 +6,12 @@ import EnemyTestComponent from "./EnemyTestComponent.js";
     template: `
     <div class="container">
        <enemy></enemy>
-       <router-link to="/shop"><div id="text"><h1>Your Journey was Safe</h1></div></router-link>
+       <router-link to="/bundle2/shop"><div id="text"><h1>Your Journey was Safe</h1></div></router-link>
     </div>
     `,
 
     mounted: function() {
-        // this.getWallet();
+      $(".bundle2Router").hide()
     },
 
     methods: {

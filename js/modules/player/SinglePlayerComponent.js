@@ -8,5 +8,8 @@ export default {
         <h3 :class="player.ability">{{ player.dmg }}</h3>
         <h3 :class="player.ability">{{ player.hp }}</h3>
     </div>
-    `
+    `,
+
+    mounted: function() {
+    }
 }

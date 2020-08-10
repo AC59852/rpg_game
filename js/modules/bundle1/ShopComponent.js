@@ -14,7 +14,7 @@ export default {
           <item v-for="item in items" v-on:click.native="attemptPurchase(item)" :item="item" :key="item.ID" class="item" :id="item.itemID"></item>
         </div>
 
-        <router-link to="/">home</router-link>
+        <router-link to="/bundle1" v-on:click.native="routerShow()"">bundle1</router-link>
     </div>
     `,
 
@@ -44,9 +44,15 @@ export default {
         this.shopStartText();
         this.hideItems();
         this.itemHover();
+
+        $(".bundle1Router").hide()
     },
 
     methods: {
+
+      routerShow() {
+        $(".bundle1Router").show();
+      },
         test() {
             var inputCount = 0;
             $("div.shopText").click(function () {

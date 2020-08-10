@@ -1,10 +1,10 @@
 import HomeComponent from "./modules/HomeComponent.js";
 
-import Bundle1Component from "./modules/bundle1/Bundle1Component";
+import Bundle1Component from "./modules/bundle1/Bundle1Component.js";
 import ShopComponent from "./modules/bundle1/ShopComponent.js";
 import EnemyComponent from "./modules/bundle1/EnemyComponent.js";
 
-import Bundle2Component from "./modules/bundle2/Bundle2Component";
+import Bundle2Component from "./modules/bundle2/Bundle2Component.js";
 import ShopComponent2 from "./modules/bundle2/ShopComponent2.js";
 import EnemyComponent2 from "./modules/bundle2/EnemyComponent2.js";
 

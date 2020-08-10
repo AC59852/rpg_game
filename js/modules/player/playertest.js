@@ -1,5 +1,5 @@
-import SinglePlayerComponent from "./SinglePlayerComponent";
-import SingleItemComponent from "./SingleItemComponent";
+import SinglePlayerComponent from "./SinglePlayerComponent.js";
+import SingleItemComponent from "./SingleItemComponent.js";
 
 export default {
     props:['playertest'],

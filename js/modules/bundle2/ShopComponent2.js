@@ -49,7 +49,12 @@
   
           $(".bundle2Router").hide()
 
-          this.invenArray = JSON.parse(localStorage.getItem('invenStr'));
+          if (localStorage.getItem('invenStr') === null) {
+            localStorage.setItem('invenStr', invenStr)
+        } else {
+            console.log("already set")
+            this.invenArray = JSON.parse(localStorage.getItem('invenStr'));
+        }
 
           // var check = this.invenArray.filter(function (elm) {
           //   if (elm.ID == '3') {

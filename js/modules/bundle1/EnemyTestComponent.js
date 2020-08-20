@@ -7,6 +7,7 @@
        <div id="enemy">
         <h1>{{currentEnemy.name}}</h1>
         <h2 id="enemyHP">HP: {{currentEnemy.hp}}</h2>
+        <h3 id="enemyDmg">{{ currentEnemy.damage }}</h3>
 
         <h2 @click="dmgEnemy()">Damage Enemy</h2>
        </div>
@@ -25,6 +26,10 @@
 
             currentEnemy: {}
         }
+    },
+
+    created: function() {
+        
     },
 
     mounted: function() {
@@ -56,6 +61,7 @@
             } else {
                 $("h2#enemyHP").text("HP: " + newHP);
             }
+            bus.$emit('myEvent',true);
         }
     }
 }

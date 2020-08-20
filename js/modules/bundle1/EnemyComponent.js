@@ -1,5 +1,4 @@
 import EnemyTestComponent from "./EnemyTestComponent.js";
-import PlayerComponent from "./player/PlayerComponent.js";
 
   // Component Code
   export default {
@@ -7,22 +6,18 @@ import PlayerComponent from "./player/PlayerComponent.js";
     template: `
     <div class="container">
        <enemy></enemy>
-       <router-link to="/shop"><div id="text"><h1>Your Journey was Safe</h1></div></router-link>
+       <router-link to="/bundle1/shop"><div id="text"><h1>Your Journey was Safe</h1></div></router-link>
     </div>
     `,
 
     mounted: function() {
-        // this.getWallet();
+      $(".bundle1Router").hide();
     },
 
     methods: {
-      newAbil(info) {
-        this.currentPlayer = info;
-      }
     },
 
     components: {
         enemy: EnemyTestComponent,
-        player: PlayerComponent
     }
 }

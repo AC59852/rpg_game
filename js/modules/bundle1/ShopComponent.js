@@ -11,18 +11,19 @@ export default {
         <span id="itemPrice">{{ currentItem.price }}</span>
 
         <div id="shopItems">
-          <item v-for="item in items" v-on:click.native="attemptPurchase(item)" :item="item" :key="item.ID" class="item" :class="item.ID"></item>
+          <item v-for="item in items" v-on:click.native="attemptPurchase(item)" :item="item" :key="item.ID" class="item" :id="item.itemID"></item>
         </div>
 
-        <router-link to="/">home</router-link>
+        <router-link to="/bundle1" v-on:click.native="routerShow()"">bundle1</router-link>
     </div>
     `,
 
     data: function() {
       return {
         items: [
-          {name: "testItem 1", price: "$5", desc: "This is a test description for test item 1", ID: "1"},
-          {name: "testItem 2", price: "$6.99", desc: "This is a test description for test item 2", ID: "2"}
+          {name: "testItem 1", price: "$5", desc: "This is a test description for test item 1", ID: "1", itemID: "item1"},
+          {name: "testItem 2", price: "$6.99", desc: "This is a test description for test item 2", ID: "2", itemID: "item2"},
+          {name: "testItem 3", price: "$1", desc: "This is a test description for test item 3", ID: "3", itemID: "item3"}
         ],
 
         currentItem: {}
@@ -32,6 +33,7 @@ export default {
     created: function() {
         // Log that the page was indeed created
         console.log("Home Component Created");
+        
     },
 
     // Likely not needed, but mounted is for when the page is fully rendered
@@ -42,9 +44,15 @@ export default {
         this.shopStartText();
         this.hideItems();
         this.itemHover();
+
+        $(".bundle1Router").hide()
     },
 
     methods: {
+
+      routerShow() {
+        $(".bundle1Router").show();
+      },
         test() {
             var inputCount = 0;
             $("div.shopText").click(function () {
@@ -111,7 +119,8 @@ export default {
               
               var p = JSON.parse(r);
   
-              $("span#inventory").append(`<span class="invenItem ${p[0].name}"><li>` + p[0].name + `</li><p>${p[0].desc}</p></span>`);
+              $("span#inventory").append(`<span class="invenItem ${p[0].name} ${p[0].itemID}"<li>` + p[0].name + `</li><p>${p[0].desc}</p></span>`);
+              console.log(inventory);
             }
           }.bind(this),0);
 

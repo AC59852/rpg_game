@@ -1,17 +1,37 @@
-  // Always import before template
+import SinglePlayerComponent from "./SinglePlayerComponent";
 
-  // Component Code
-  export default {
+export default {
+    props:['player'],
 
-    props: ['player'],
+    template: `
+    <div id="players">
+            <player v-for="player in players" 
+            :player="player"
+            v-on:click.native="newAbil(player)"></player>
 
+            <span id="currentDmg">{{currentPlayer.dmg}}</span>
+        </div>
+    `,
 
-      // Component HTML using child components
-      template: `
-      <div>
-        <h2>{{ player.name }}</h2>
-        <h3>{{ player.ability }}</h3>
-        <h3>{{ player.dmg }}</h3>
-      </div>
-      `
-  }
+    data: {
+        players: [
+            {name: "player1", ability: "pistol shot", dmg: "15"},
+            {name: "player2", ability: "punch", dmg: "25"},
+            {name: "player3", ability: "knife lunge", dmg: "35"},
+        ],
+        currentPlayer: {},
+    },
+
+    created: function() {
+
+        bus.$emit('myEvent',true);
+    },
+
+    methods: {
+        
+    },
+
+    components: {
+        player: SinglePlayerComponent
+    }
+}

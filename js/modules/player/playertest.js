@@ -80,19 +80,22 @@ export default {
         test() {
             this.invenArray = JSON.parse(localStorage.getItem('invenStr'));
             console.log(this.invenArray)
-
-            var check = this.invenArray.filter(function (elm) {
-                if (elm.ID == '3') {
+            if (this.invenArray === null) {
+            } else {
+                var check = this.invenArray.filter(function (elm) {
+                    if (elm.ID == '3') {
                         return elm;
-                   }
-             });
+                    }
+                });
+
             console.log(check.length > 0); // returns 1
             if (check.length > 0)
-               {
-                  check.forEach(element => {
-                    var oldDmg = eval(this.players[0].dmg);
-                    this.players[0].dmg = oldDmg + 5
-                  });
+                {
+                    check.forEach(element => {
+                        var oldDmg = eval(this.players[0].dmg);
+                        this.players[0].dmg = oldDmg + 5
+                        });
+                    }
                 }
             }
 

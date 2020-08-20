@@ -49,7 +49,9 @@
   
           $(".bundle2Router").hide()
 
-          if (localStorage.getItem('invenStr') === null) {
+          // TODO Find a fix for parsing null as empty array so that the items can be pushed
+
+          if (this.invenArray === null) {
             localStorage.setItem('invenStr', invenStr)
         } else {
             console.log("already set")
@@ -113,6 +115,7 @@
   
           attemptPurchase(info) {
             this.currentItem = info;
+
             setTimeout(function() {
               var price = $("span#itemPrice").text().replace("$", "");
               var money = $("div#wallet").text().replace("$", "");

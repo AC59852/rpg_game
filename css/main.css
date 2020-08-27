@@ -55,7 +55,7 @@ body {
 }
 
 #players div {
-    margin-left: 2%;
+    margin-right: 5%;
     cursor: pointer;
 }
 
@@ -83,4 +83,9 @@ body {
 
 #itemPrice {
     display: none;
+}
+
+.playerCon {
+    position: fixed;
+    right: 2%;
 }

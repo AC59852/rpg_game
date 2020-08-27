@@ -6,7 +6,7 @@
       <router-view :key="$route.fullPath"></router-view>
        <router-link class="bundle2Router" to="/bundle2/shop">shop</router-link>
        <router-link class="bundle2Router" to="/bundle2/enemy">monster</router-link>
-       <router-link class="bundle1Router" to="/bundle1">bundle1</router-link>
+       <router-link class="bundle2Router" to="/bundle2/intro">Intro</router-link>
     </div>
     `,
 

@@ -5,7 +5,7 @@ export default {
     props:['playertest'],
 
     template: `
-    <div class="container">
+    <div class="playerCon">
         <div id="inventory">
             <item v-for="item in invenArray" 
                     :item="item"></item>

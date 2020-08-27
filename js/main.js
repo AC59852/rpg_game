@@ -7,6 +7,7 @@ import EnemyComponent from "./modules/bundle1/EnemyComponent.js";
 import Bundle2Component from "./modules/bundle2/Bundle2Component.js";
 import ShopComponent2 from "./modules/bundle2/ShopComponent2.js";
 import EnemyComponent2 from "./modules/bundle2/EnemyComponent2.js";
+import IntroComponent from "./modules/bundle2/IntroComponent.js";
 
 
 import playertest from "./modules/player/playertest.js";
@@ -45,6 +46,7 @@ window.bus = new Vue({});
             { path: '/bundle2', name: "bundle2", component: Bundle2Component, children: [
                 { path: '/bundle2/enemy', name: "enemy2", component: EnemyComponent2, props: true},
                 { path: '/bundle2/shop', name: "shop2", component: ShopComponent2, props: true},
+                { path: '/bundle2/intro', name: "intro", component: IntroComponent, props: true},
             ]},
         ]
     });
@@ -55,12 +57,12 @@ window.bus = new Vue({});
         created: function() {
             var _lsTotal=0,_xLen,_x;for(_x in localStorage){ if(!localStorage.hasOwnProperty(_x)){continue;} _xLen= ((localStorage[_x].length + _x.length)* 2);_lsTotal+=_xLen; console.log(_x.substr(0,50)+" = "+ (_xLen/1024).toFixed(2)+" KB")};console.log("Total = " + (_lsTotal / 1024).toFixed(2) + " KB");
 
-            if (localStorage.getItem('invenStr') === null) {
-                localStorage.setItem('invenStr', invenStr)
-            } else {
-                console.log("already set")
-                this.invenArray = JSON.parse(localStorage.getItem('invenStr'));
-            }
+            // if (localStorage.getItem('invenStr') === null) {
+            //     localStorage.setItem('invenStr')
+            // } else {
+            //     console.log("already set")
+            //     this.invenArray = JSON.parse(localStorage.getItem('invenStr'));
+            // }
             
             console.log("Vue Application Created");
             this.inventoryHover();

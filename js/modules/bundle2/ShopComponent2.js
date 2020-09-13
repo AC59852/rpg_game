@@ -58,13 +58,13 @@
             this.invenArray = JSON.parse(localStorage.getItem('invenStr'));
         }
 
-          // var check = this.invenArray.filter(function (elm) {
-          //   if (elm.ID == '3') {
-          //           return elm;
-          //      }
-          // }); if (check.length > 0) {
-          //     this.items[2].canBuy = false
-          //   }
+          var check = this.invenArray.filter(function (elm) {
+             if (elm.ID == this.items.ID) {
+                     return elm;
+                }
+           }); if (check.length > 0) {
+               this.items[0].canBuy = false
+             }
       },
   
       methods: {

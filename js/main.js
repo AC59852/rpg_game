@@ -15,9 +15,9 @@ Vue.mixin({
     data: function() {
       return {
         players: [
-            {name: "player1", ability: "pistol shot", dmg: "15", hp: "100"},
-            {name: "player2", ability: "punch", dmg: "25",  hp: "100"},
-            {name: "player3", ability: "knife lunge", dmg: "35",  hp: "25"},
+            {ID: 1, name: "player1", ability: "pistol shot", dmg: "15", hp: "100"},
+            {ID: 2, name: "player2", ability: "punch", dmg: "25",  hp: "100"},
+            {ID: 3, name: "player3", ability: "knife lunge", dmg: "35",  hp: "25"},
         ],
         
         currentPlayer: {name: "player1", ability: "pistol shot", dmg: "15", hp: "100"},

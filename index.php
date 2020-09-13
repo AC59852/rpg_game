@@ -18,8 +18,8 @@
         <router-view></router-view>
         <div id="textbox">
             <div id="textElem">
-                <object data="assets/text_triangles_left" type="image/svg+xml"></object>
-                <object data="assets/text_triangles_right" type="image/svg+xml"></object>
+                <object data="assets/text_triangles_left.svg" type="image/svg+xml"></object>
+                <object data="assets/text_triangles_right.svg" type="image/svg+xml"></object>
             </div>
             <div id="textboxContent">
                 <h2 id="textbox_name">Lorem dolor</h2>

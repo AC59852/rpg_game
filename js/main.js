@@ -57,12 +57,12 @@ window.bus = new Vue({});
         created: function() {
             var _lsTotal=0,_xLen,_x;for(_x in localStorage){ if(!localStorage.hasOwnProperty(_x)){continue;} _xLen= ((localStorage[_x].length + _x.length)* 2);_lsTotal+=_xLen; console.log(_x.substr(0,50)+" = "+ (_xLen/1024).toFixed(2)+" KB")};console.log("Total = " + (_lsTotal / 1024).toFixed(2) + " KB");
 
-            if (localStorage.getItem('invenStr') === null) {
-                 localStorage.setItem('invenStr', this.invenArray)
-             } else {
-                 console.log("already set")
-                 this.invenArray = JSON.parse(localStorage.getItem('invenStr'));
-             }
+            // if (localStorage.getItem('invenStr') === null) {
+            //      localStorage.setItem('invenStr', invenArray)
+            //  } else {
+            //      console.log("already set")
+            //      this.invenArray = JSON.parse(localStorage.getItem('invenStr'));
+            //  }
             
             console.log("Vue Application Created");
             this.inventoryHover();
